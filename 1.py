@@ -31,9 +31,9 @@ device = torch.device("cuda")
 # Set up augmentations
 train_transform = torchvision.transforms.Compose(
     [
-        augmentations28.WeatherAugmentations(p=0.3, output="pil"),
-        augmentations28.GeometricAugs(img_size=config.IMG_SIZE),
-        augmentations28.visual_transforms,
+        augmentations.WeatherAugmentations(p=0.3, output="pil"),
+        augmentations.GeometricAugs(img_size=config.IMG_SIZE),
+        augmentations.visual_transforms,
         torchvision.transforms.Normalize(
             mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
         ),
@@ -43,7 +43,7 @@ train_transform = torchvision.transforms.Compose(
 val_transform = torchvision.transforms.Compose(
     [
         torchvision.transforms.ToTensor(),
-        augmentations28.AdaptivePad(size=config.IMG_SIZE),
+        augmentations.AdaptivePad(size=config.IMG_SIZE),
         torchvision.transforms.Normalize(
             mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
         ),
