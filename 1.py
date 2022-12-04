@@ -1,3 +1,5 @@
+# This file sets up and performs a single experiment. Modify and save to 2.py, 3.py... to perform other experiments.
+
 import sys
 import torch
 from torchsampler import ImbalancedDatasetSampler
